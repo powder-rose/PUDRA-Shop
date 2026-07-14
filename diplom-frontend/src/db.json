@@ -1,0 +1,165 @@
+{
+  "users": [
+    {
+      "id": "001",
+      "login": "admin",
+      "password": "qwerty123",
+      "registered_at": "27.06.2026",
+      "role_id": 0,
+      "bag": [
+        {
+          "productId": "UiOKlkdkI",
+          "quantity": 1
+        }
+      ],
+      "session": "d98f1efd-fb2f-4128-a54b-8616338e7698",
+      "roleId": 0
+    },
+    {
+      "login": "user",
+      "password": "qwerty",
+      "registered_at": "2026-06-28",
+      "role_id": 1,
+      "id": "u211-dvKJqs",
+      "bag": [
+        {
+          "productId": "y1SS4TbH5FU",
+          "quantity": 1
+        }
+      ],
+      "session": null
+    },
+    {
+      "login": "ivan1",
+      "password": "qwerty123",
+      "registered_at": "2026-06-29",
+      "bag": [],
+      "role_id": 1,
+      "id": "SifiJhV8yqk",
+      "session": null
+    },
+    {
+      "id": "boLmOkj8RqY",
+      "login": "ivan12",
+      "password": "qwert",
+      "bag": [],
+      "session": "d4edfb2e-2110-44ab-823b-d8ce57eaaa0d"
+    },
+    {
+      "id": "Lcg1D5IwoMg",
+      "login": "ivan121",
+      "bag": {
+        "productId": "1234",
+        "quantity": 1
+      },
+      "password": "qwert",
+      "session": "cd09aeef-cb2c-4945-9760-b632c38d1536"
+    },
+    {
+      "login": "ivan12w",
+      "password": "qwert",
+      "registered_at": "2026-06-29",
+      "bag": [],
+      "role_id": 1,
+      "id": "UProy4wF0XA",
+      "session": null
+    }
+  ],
+  "roles": [
+    {
+      "id": "0",
+      "name": "Admin"
+    },
+    {
+      "id": "1",
+      "name": "User"
+    }
+  ],
+  "products": [
+    {
+      "id": "UiOKlkdkI",
+      "title": "FACE POWDER",
+      "desc": "Пудра с эффектом сияния кожи",
+      "category": {
+        "id": "002",
+        "name": "Пудра для лица"
+      },
+      "image_url": "https://api.abc-concierge.ru/media/CACHE/images/products/variant/images/bbad36ea-f1cf-4c1a-93df-688f59274792/ca1437ff4a71ab7c280f0150115338a1.webp",
+      "count": 32,
+      "price": 2300
+    },
+    {
+      "id": "yeJU1lFwуE",
+      "title": "LIPSTICK",
+      "desc": "Уходовая помада",
+      "category": {
+        "id": "003",
+        "name": "Уход за губами"
+      },
+      "image_url": "https://api.abc-concierge.ru/media/CACHE/images/products/variant/images/fa1a184a-3660-445a-b247-46b5a0113cef/a7967a5e6a1ca60bfac1764fd6cbb45d.webp",
+      "count": 8,
+      "price": 2000
+    },
+    {
+      "id": "jKlogdrT2",
+      "title": "BLUSH",
+      "desc": "Румяна",
+      "category": {
+        "id": "004",
+        "name": "Румяна"
+      },
+      "image_url": "https://api.abc-concierge.ru/media/CACHE/images/products/variant/images/64dc6b42-3bda-42f7-ba52-0ff66fbae321/6a528e01c080db871a328bca9f8f7daa.webp",
+      "count": 10,
+      "price": 5000
+    },
+    {
+      "title": "COLLAGEN FACE MASK",
+      "price": 2000,
+      "count": 30,
+      "image_url": "https://api.abc-concierge.ru/media/CACHE/images/products/variant/images/748ab2dd-124c-4102-98e9-e185364abb12/127832be07547b0e5bb28d5d87eb5fe3.webp",
+      "category": {
+        "id": "",
+        "name": "Уход за лицом"
+      },
+      "desc": "Маска для лица с коллагеном",
+      "id": "yeJU1lFwEAk"
+    },
+    {
+      "title": "PINK COLLAGEN GEL TONER PAD",
+      "price": 2200,
+      "count": 42,
+      "image_url": "https://api.abc-concierge.ru/media/CACHE/images/products/variant/images/112a0e49-1018-4b35-83b1-4630db692d6e/6c6c905d2a77e69c0165fe03ab2af4a9.webp",
+      "category": {
+        "id": "",
+        "name": "Уход за лицом"
+      },
+      "desc": "Розовые патчи для лица",
+      "id": "Kj_qTv-UW9g"
+    },
+    {
+      "title": "BODY MIST",
+      "price": 3430,
+      "count": 25,
+      "image_url": "https://api.abc-concierge.ru/media/CACHE/images/products/variant/images/ff6959a2-aea0-4ed1-b1db-31f86f3d63a4/e9ddf9dc376fc49c46fd1156697ad46d.webp",
+      "category": {
+        "id": "",
+        "name": "Уход за телом"
+      },
+      "desc": "Мист для тела",
+      "id": "mOJ5Ai_bMb4"
+    },
+    {
+      "title": "PEPTIDE LIP TINT",
+      "price": 4000,
+      "count": 32,
+      "image_url": "https://api.abc-concierge.ru/media/CACHE/images/products/variant/images/e73e6c8b-bdee-4420-afea-0238b7f47797/c36cefc5e777116ea646cf9e729b78de.webp",
+      "category": {
+        "id": "",
+        "name": "Уход за губами"
+      },
+      "desc": "Тинт для губ с пептидами",
+      "id": "y1SS4TbH5FU"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

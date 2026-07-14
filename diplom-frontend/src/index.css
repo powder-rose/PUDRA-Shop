@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Comfortaa:wght@300..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aboreto&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+
+margin: 0;
+padding: 0;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+html, body, #root {
+    overflow-x: hidden;
+   height: 100%;
+    --brand-color: #FF4344;
+    --brand-color-hover: #ff7272;
+    --choko-color: #996363;
+
+}
