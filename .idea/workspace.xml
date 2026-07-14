@@ -46,6 +46,13 @@
     "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "GitStage.ChangesTree.GroupingKeys": [
+      "directory",
+      "module",
+      "repository"
+    ]
   }
 }]]></component>
   <component name="RunManager">
@@ -83,7 +90,7 @@
       <workItem from="1783926002241" duration="13800000" />
       <workItem from="1783957223710" duration="1773000" />
       <workItem from="1784020534530" duration="5871000" />
-      <workItem from="1784027426201" duration="897000" />
+      <workItem from="1784027426201" duration="1313000" />
     </task>
     <servers />
   </component>

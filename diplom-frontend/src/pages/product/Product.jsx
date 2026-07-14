@@ -56,6 +56,32 @@ const ProductContainer = ({ className }) => {
   const { id, title, desc, imageUrl, count, price } = product;
 
   const handleAddToBag = async () => {
+    const user = sessionStorage.getItem("userData");
+
+    // Гость
+    if (!user) {
+      const bag = JSON.parse(localStorage.getItem("bag")) || [];
+
+      const exists = bag.find((item) => item.productId === id);
+
+      if (!exists) {
+        bag.push({
+          productId: id,
+          title,
+          price,
+          imageUrl,
+          desc,
+          count,
+          quantity: 1,
+        });
+      }
+
+      localStorage.setItem("bag", JSON.stringify(bag));
+      dispatch(setBag(bag));
+      setInBag(true);
+      return;
+    }
+
     const { error, data } = await request("/bag", "POST", {
       productId: id,
     });
@@ -66,7 +92,6 @@ const ProductContainer = ({ className }) => {
     }
 
     dispatch(setBag(data.data));
-
     setInBag(true);
   };
 

@@ -12,40 +12,75 @@ import { request } from "../../utilits/request.js";
 const BagContainer = ({ className }) => {
   const bag = useSelector(selectBag) || [];
   const dispatch = useDispatch();
+  const isAuth = sessionStorage.getItem("userData");
 
   useEffect(() => {
-    const loadBag = async () => {
-      const result = await request("/bag");
+    if (!isAuth) {
+      const bag = JSON.parse(localStorage.getItem("bag")) || [];
+      dispatch(setBag(bag));
+      return;
+    }
 
-      if (!result) {
-        console.error("getBag returned undefined");
-        return;
-      }
-
-      const { error, data } = result;
-
-      if (error) {
-        console.error(error);
-        return;
-      }
-
+    request("/bag").then(({ data }) => {
       dispatch(setBag(data.data || []));
-    };
-
-    loadBag();
-  }, [dispatch]);
+    });
+  }, []);
 
   const increase = (id, count) => {
+    if (!isAuth) {
+      const bag = JSON.parse(localStorage.getItem("bag")) || [];
+
+      const updatedBag = bag.map((item) =>
+        item.productId === id
+          ? {
+              ...item,
+              quantity: item.quantity + 1,
+            }
+          : item,
+      );
+
+      localStorage.setItem("bag", JSON.stringify(updatedBag));
+      dispatch(setBag(updatedBag));
+      return;
+    }
+
     request("/bag", "PATCH", {
       productId: id,
       count: count + 1,
-    }).then((result) => {
-      if (!result) return;
-      dispatch(setBag(result.data.data || []));
+    }).then(({ data }) => {
+      dispatch(setBag(data.data));
     });
   };
 
   const decrease = (id, count) => {
+    if (!isAuth) {
+      const bag = JSON.parse(localStorage.getItem("bag")) || [];
+
+      const item = bag.find((item) => item.productId === id);
+
+      if (item.quantity <= 1) {
+        const updatedBag = bag.filter((item) => item.productId !== id);
+
+        localStorage.setItem("bag", JSON.stringify(updatedBag));
+        dispatch(setBag(updatedBag));
+        return;
+      }
+
+      const updatedBag = bag.map((item) =>
+        item.productId === id
+          ? {
+              ...item,
+              quantity: item.quantity - 1,
+            }
+          : item,
+      );
+
+      localStorage.setItem("bag", JSON.stringify(updatedBag));
+      dispatch(setBag(updatedBag));
+
+      return;
+    }
+
     if (count <= 1) {
       remove(id);
       return;
@@ -54,15 +89,29 @@ const BagContainer = ({ className }) => {
     request("/bag", "PATCH", {
       productId: id,
       count: count - 1,
-    }).then((result) => {
-      if (!result) return;
-      dispatch(setBag(result.data.data || []));
+    }).then(({ error, data }) => {
+      if (error) {
+        console.error(error);
+        return;
+      }
+
+      dispatch(setBag(data.data));
     });
   };
 
   const remove = (id) => {
-    request(`/bag/${id}`, "DELETE").then((result) => {
-      dispatch(setBag(result.data.data || []));
+    if (!isAuth) {
+      const bag = JSON.parse(localStorage.getItem("bag")) || [];
+
+      const updatedBag = bag.filter((item) => item.productId !== id);
+
+      localStorage.setItem("bag", JSON.stringify(updatedBag));
+      dispatch(setBag(updatedBag));
+      return;
+    }
+
+    request(`/bag/${id}`, "DELETE").then(({ data }) => {
+      dispatch(setBag(data.data || []));
     });
   };
 
