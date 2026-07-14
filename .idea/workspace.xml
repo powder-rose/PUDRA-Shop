@@ -55,6 +55,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Екатерина\WebstormProjects\final-diploma\diplom-backend" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/diplom-frontend/package.json" />
@@ -90,7 +95,7 @@
       <workItem from="1783926002241" duration="13800000" />
       <workItem from="1783957223710" duration="1773000" />
       <workItem from="1784020534530" duration="5871000" />
-      <workItem from="1784027426201" duration="1313000" />
+      <workItem from="1784027426201" duration="5730000" />
     </task>
     <servers />
   </component>
@@ -100,5 +105,8 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

@@ -17,7 +17,6 @@ function mapBag(user) {
   }));
 }
 
-
 router.post("/", auth, async (req, res) => {
   await addToBag(req.user.id, req.body.productId);
 
